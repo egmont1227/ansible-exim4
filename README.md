@@ -40,7 +40,10 @@ Usage
 ```
 Testing:
 
-   echo "test mail from new server." | mail -s user@somedomain.tld
+   echo "test mail from new server." | mail -s "Test message" somone@somewhere.tld
+
+   Could also test the configuration file prior to restart:
+   exim -bV
 
 License
 -------
