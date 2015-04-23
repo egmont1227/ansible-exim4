@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  author: George Boobyer (orig: Pierre Buyle & Pierre Paul Lefebvre)
+  author: "George Boobyer (orig: Pierre Buyle & Pierre Paul Lefebvre)"
   description: Manage a simple exim4 configuration
   company: Blue-Bag
   license: BDS
