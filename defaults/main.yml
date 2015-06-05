@@ -1,6 +1,6 @@
 ---
 # defaults file for exim4
-exim4_dc_eximconfig_configtype: local
+exim4_dc_eximconfig_configtype: 'local'
 exim4_dc_other_hostnames: "{{ ansible_hostname }}"
 exim4_dc_local_interfaces: '127.0.0.1 ; ::1'
 exim4_dc_readhost: ''

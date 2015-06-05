@@ -1,7 +1,7 @@
-Role Name
+Exim setup
 ========
 
-Ansbile role to install and configure Exim4 on Debian based system.
+Ansible role to install and configure Exim4 on Debian based system.
 
 Role Variables
 --------------
@@ -38,6 +38,12 @@ Usage
       exim4_dc_hide_mailname: 'true'
       exim4_passwd_client: ['*.mandrillapp.com:your-mandrill-username@yourdomain.com:{{ mandrill_api_key }}']
 ```
+Testing:
+
+   echo "test mail from new server." | mail -s "Test message" somone@somewhere.tld
+
+   Could also test the configuration file prior to restart:
+   exim -bV
 
 License
 -------
@@ -46,6 +52,9 @@ BSD
 
 Author Information
 ------------------
+Fork: George Boobyer
 
 * Pierre Buyle <buyle@floedesign.ca>
 * Pierre Paul Lefebvre <lefebvre@studioqi.ca>
+
+Forked from https://github.com/Pheromone/ansible-exim4 - now https://github.com/FloeDesignTechnologies/ansible-exim4
