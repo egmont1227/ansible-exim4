@@ -22,3 +22,7 @@
 - name: Create /etc/passwd.client
   template: src=passwd.client dest=/etc/exim4/passwd.client group=Debian-exim
   notify: update exim4.conf
+
+- name: Set /etc/mailname
+  template: src=etcmailname.j2 dest=/etc/mailname
+  notify: update exim4.conf
