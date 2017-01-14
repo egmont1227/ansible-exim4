@@ -1,5 +1,6 @@
 Exim setup
 ========
+[![Build Status](https://travis-ci.org/Blue-Bag/ansible-exim4.svg?branch=master)](https://travis-ci.org/Blue-Bag/ansible-exim4)
 
 Ansible role to install and configure Exim4 on Debian based system.
 
