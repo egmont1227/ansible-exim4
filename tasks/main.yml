@@ -2,7 +2,7 @@
 # tasks file for exim4
 - name: Install Exim4 package
   package:
-    name: {{ exim_daemon }}
+    name: "{{ exim_daemon }}"
     state: present
   become: true
   tags:
