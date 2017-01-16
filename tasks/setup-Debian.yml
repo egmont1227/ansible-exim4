@@ -3,5 +3,5 @@
 - name: Ensure exim is installed.
   apt:
     name: "{{ exim_daemon }}"
-    state: installed"
+    state: installed
     update_cache: yes
