@@ -1,5 +1,11 @@
 ---
 # tasks file for exim4
+
+# Include variables and define needed variables.
+- name: Include OS-specific variables.
+  include_vars: "{{ ansible_os_family }}.yml"
+  tags: ['always']
+
 - name: Install Exim4 package
   package:
     name: "{{ exim_daemon }}"
