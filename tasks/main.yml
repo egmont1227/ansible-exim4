@@ -1,8 +1,8 @@
 ---
 # tasks file for exim4
 - name: Install Exim4 package
-  apt: 
-    name: exim4 
+  package:
+    name: {{ exim_daemon }}
     state: present
   become: true
   tags:
@@ -11,7 +11,7 @@
 - name: Exim4 Configuration
   template:
     src: 'update-exim4.conf.j2'
-    dest: '/etc/exim4/update-exim4.conf.conf'
+    dest: '{{ exim_path }}/{{ exim_configuration_file }}'
   become: true
   tags:
     - exim
@@ -20,22 +20,29 @@
     - restart exim4
 
 - name: Create catch all configuration
-  template: 
-    src: '01_exim4-config_catch_all' 
-    dest: '/etc/exim4/conf.d/router/01_exim4-config_catch_all'
+  template:
+    src: '01_exim4-config_catch_all'
+    dest: "{{ exim_path }}/conf.d/router/01_exim4-config_catch_all"
   when: (exim4_catch_all_email is defined) and exim4_catch_all_email
+  tags:
+    - exim
   notify: update exim4.conf
 
 - name: Delete catch all configuration
   file:
-    path: /etc/exim4/conf.d/router/01_exim4-config_catch_all
+    path: "{{ exim_path }}/conf.d/router/01_exim4-config_catch_all"
     state: absent
   when: (not exim4_catch_all_email is defined) or (not exim4_catch_all_email)
+  tags:
+    - exim
   notify: update exim4.conf
 
 - name: Create /etc/passwd.client
-  template: 
+  template:
     src: passwd.client
-    dest: /etc/exim4/passwd.client 
-    group: Debian-exim
+    dest: "{{ exim_path }}/passwd.client"
+    group: "{{ exim_group }}"
+  when: '{{ ansible_os_family == "Debian" }}'
+  tags:
+    - exim
   notify: update exim4.conf
