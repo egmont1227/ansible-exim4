@@ -6,13 +6,14 @@
   include_vars: "{{ ansible_os_family }}.yml"
   tags: ['always']
 
-- name: Install Exim4 package
-  package:
-    name: "{{ exim_daemon }}"
-    state: present
-  become: true
-  tags:
-    - exim
+
+# Setup/install tasks.
+- include: setup-RedHat.yml
+  when: ansible_os_family == 'RedHat'
+
+- include: setup-Debian.yml
+  when: ansible_os_family == 'Debian'
+
 
 - name: Exim4 Configuration
   template:

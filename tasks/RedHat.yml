@@ -1,0 +1,5 @@
+---
+- name: Ensure exim is installed.
+  yum:
+    name: "{{ exim_daemon }}"
+    state: installed
