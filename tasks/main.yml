@@ -59,4 +59,6 @@
     - acl/30_exim4-config_check_rcpt
     - acl/31_exim4-config_check_not_smtp
     - main/03_exim4-config_extra_options
+  tags:
+    - exim
   notify: update exim4.conf
