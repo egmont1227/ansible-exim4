@@ -37,6 +37,7 @@ Usage
       exim4_dc_readhost: 'lacaisse.com'
       exim4_dc_smarthost: 'smtp.mandrillapp.com::587'
       exim4_dc_hide_mailname: 'true'
+      exim4_catch_all_email: 'somemail@example.com'
       exim4_passwd_client: ['*.mandrillapp.com:your-mandrill-username@yourdomain.com:{{ mandrill_api_key }}']
 ```
 Testing:
@@ -59,3 +60,4 @@ Fork: George Boobyer
 * Pierre Paul Lefebvre <lefebvre@studioqi.ca>
 
 Forked from https://github.com/Pheromone/ansible-exim4 - now https://github.com/FloeDesignTechnologies/ansible-exim4
+
