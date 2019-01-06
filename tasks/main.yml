@@ -77,7 +77,7 @@
     regexp: '^{{ item.user }}:'
     line: '{{ item.user }}: {{ item.alias }}'
     backup: yes
-  with_items: exim4_aliases
+  with_items: "{{ exim4_aliases }}"
   tags:
     - exim
   when: exim4_aliases > 0

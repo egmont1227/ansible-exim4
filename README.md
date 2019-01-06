@@ -45,7 +45,7 @@ Usage
         - "X-MC-Subaccount: mandrill_subaccount_1"
         - "X-Test: True"
       exim4_aliases:
-        - name: root
+        - user: root
           alias: {{ ansible_env.SUDO_USER }}
 ```
 Testing:
