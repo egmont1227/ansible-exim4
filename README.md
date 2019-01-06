@@ -67,5 +67,13 @@ Fork: George Boobyer
 * Pierre Buyle <buyle@floedesign.ca>
 * Pierre Paul Lefebvre <lefebvre@studioqi.ca>
 
+Contributions
+------------------
+
+* [Daniel Paufler](https://github.com/egmont1227)
+* [Karl Fritsche](https://github.com/kairion-dev)
+* [Chris Pinard](https://github.com/slaarti)
+
 Forked from https://github.com/Pheromone/ansible-exim4 - now https://github.com/FloeDesignTechnologies/ansible-exim4
+
 
