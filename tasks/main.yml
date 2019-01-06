@@ -62,3 +62,11 @@
   tags:
     - exim
   notify: update exim4.conf
+
+- name: Set /etc/mailname
+  template:
+    src: "etcmailname.j2"
+    dest: "/etc/mailname"
+  tags:
+    - exim
+  notify: update exim4.conf
