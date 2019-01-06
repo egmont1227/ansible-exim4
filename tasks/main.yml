@@ -70,3 +70,15 @@
   tags:
     - exim
   notify: update exim4.conf
+
+- name: Setup aliases
+  lineinfile:
+    dest: '/etc/aliases'
+    regexp: '^{{ item.user }}:'
+    line: '{{ item.user }}: {{ item.alias }}'
+    backup: yes
+  with_items: exim4_aliases
+  tags:
+    - exim
+  when: exim4_aliases > 0
+  notify: update exim4.aliases
