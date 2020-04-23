@@ -1,0 +1,13 @@
+---
+- name: Exim4 Configuration
+  template:
+    src: 'update-exim4.conf.j2'
+    dest: '{{ exim_path }}/{{ exim_configuration_file }}'
+  become: true
+  tags:
+    - exim
+  notify:
+    - update exim4.conf
+    - restart exim4
+
+

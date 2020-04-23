@@ -12,16 +12,8 @@
 - import_tasks: setup-Debian.yml
   when: ansible_os_family == 'Debian'
 
-- name: Exim4 Configuration
-  template:
-    src: 'update-exim4.conf.j2'
-    dest: '{{ exim_path }}/{{ exim_configuration_file }}'
-  become: true
-  tags:
-    - exim
-  notify:
-    - update exim4.conf
-    - restart exim4
+- import_tasks: configure-Debian.yml
+  when: ansible_os_family == 'Debian'
 
 - name: Create catch all configuration
   template:
